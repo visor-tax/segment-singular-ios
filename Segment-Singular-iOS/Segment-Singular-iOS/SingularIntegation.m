@@ -23,7 +23,7 @@
         return self;
     }
     
-    NSString* apiKey = [settings objectForKey:@"apiKey"];
+    NSString* apiKey = [settings objectForKey:@"apikey"];
     NSString* secret = [settings objectForKey:@"secret"];
     [Singular startSession:apiKey withKey:secret];
     
@@ -32,8 +32,10 @@
 
 -(void)track:(SEGTrackPayload *)payload{
     
-    if([[payload properties] objectForKey:SEGMENT_REVENUE_KEY] &&
-       [[[payload properties] objectForKey:SEGMENT_REVENUE_KEY] doubleValue] > 0){
+    if(![[payload properties] objectForKey:SEGMENT_REVENUE_KEY] ||
+       [[[payload properties] objectForKey:SEGMENT_REVENUE_KEY] doubleValue] == 0){
+        [Singular event:[payload event]];
+    } else {
         double revenue = [[[payload properties] objectForKey:SEGMENT_REVENUE_KEY] doubleValue];
         NSString* currency = DEFAULT_CURRENCY;
         
@@ -43,9 +45,7 @@
         }
         
         [Singular customRevenue:[payload event] currency:currency amount:revenue];
-     } else {
-        [Singular event:[payload event]];
-     }
+    }
 }
 
 -(void)identify:(SEGIdentifyPayload *)payload{
