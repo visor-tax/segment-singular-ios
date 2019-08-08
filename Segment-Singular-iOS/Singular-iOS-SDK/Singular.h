@@ -32,6 +32,7 @@
 + (void)eventWithArgs:(NSString *)name, ...; // use only subclasses of
                                               // NSObject, not primitive types
                                               // like int
++ (void)setDeviceCustomUserId:(NSString *) customUserId;
 
 + (void)registerDeviceTokenForUninstall:(NSData *)deviceToken;
 + (void)registerDeferredDeepLinkHandler:(void (^)(NSString *deeplink))handler;
