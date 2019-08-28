@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
     s.summary          = "Singular integration for Segment"
 
     s.description      = "This is the Singular integration for Segment"
-
+    s.authors          = "Singular Labs"
     s.homepage         = "https://www.segment.com"
     s.license          = { :type => 'Apache 2.0', :file => 'LICENSE' }
     s.source           = { :git => "https://github.com/singular-labs/segment-singular-ios.git", :tag => s.version.to_s }
