@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-    s.name             = "segment-singular"
+    s.name             = "Segment-Singular"
     s.version          = "1.0.0"
     s.summary          = "Singular integration for Segment"
 
