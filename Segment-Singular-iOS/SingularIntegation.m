@@ -23,7 +23,7 @@
         return self;
     }
     
-    NSString* apiKey = [settings objectForKey:@"apikey"];
+    NSString* apiKey = [settings objectForKey:@"apiKey"];
     NSString* secret = [settings objectForKey:@"secret"];
     
     if (!apiKey || !secret){
