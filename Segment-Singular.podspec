@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = "Segment-Singular"
-    s.version          = "1.1.0"
+    s.version          = "1.2.0"
     s.summary          = "Singular integration for Segment"
 
     s.description      = "This is the Singular integration for Segment"
@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
     s.static_framework = true
     s.ios.deployment_target = "8.0"
     s.ios.source_files      = 'Segment-Singular-iOS/*.{h,m,mm}'
-    s.ios.dependency 'Analytics', '~> 3.0'
+    s.ios.dependency 'Analytics'
     s.ios.dependency 'Singular-SDK'
 end
