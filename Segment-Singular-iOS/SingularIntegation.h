@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SingularIntegation : NSObject<SEGIntegration>
 
 - (instancetype)initWithSettings:(NSDictionary *)settings;
++ (void)setSKANOptions:(BOOL)skAdNetworkEnabled isManualSkanConversionManagementMode:(BOOL)manualMode withWaitForTrackingAuthorizationWithTimeoutInterval:(NSNumber* _Nullable)waitTrackingAuthorizationWithTimeoutInterval withConversionValueUpdatedHandler:(void(^_Nullable)(NSInteger))conversionValueUpdatedHandler;
 
 @end
 
